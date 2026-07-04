@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puresee Spices — Premium Verified Spices | Pre-Order</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --primary: #D4A843;
+  --dark: #0F0A08;
+  --light: #F2E8D8;
+  --muted: #C9BCA8;
+  --accent: #C23B22;
+  --sage: #7A8B68;
+}
+
+body {
+  background: #0F0A08;
+  color: var(--light);
+  font-family: 'Cormorant Garamond', serif;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #1A120E; }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 5px; }
+
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 20px 5%;
+  background: rgba(15, 10, 8, 0.98);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(212, 168, 67, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-mark {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #F5D882, #D4A843);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #0F0A08;
+  font-size: 1.4rem;
+}
+
+.logo-text {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+nav {
+  display: flex;
+  gap: 40px;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+nav a:hover { color: var(--primary); }
+
+.cart-btn {
+  background: none;
+  border: 1px solid rgba(212, 168, 67, 0.3);
+  color: var(--primary);
+  padding: 10px 16px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+}
+
+.cart-btn:hover {
+  border-color: var(--primary);
+  background: rgba(212, 168, 67, 0.1);
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  padding: 120px 5% 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero h1 .accent { color: var(--accent); font-style: italic; }
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--muted);
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--dark);
+  padding: 16px 48px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 2px;
+  display: inline-block;
+  transition: all 0.3s;
+  border: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.btn-primary:hover {
+  background: #ecc169;
+  transform: translateY(-3px);
+}
+
+/* PRODUCTS */
+.products-section {
+  padding: 100px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.section-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.product-card {
+  background: linear-gradient(135deg, #1a0a02 0%, #2a1506 100%);
+  border: 1px solid rgba(212, 168, 67, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.4s;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-12px);
+}
+
+.product-hero {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  background: #0a0604;
+}
+
+.product-body {
+  padding: 32px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-badge {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--primary);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.product-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.product-desc {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid rgba(212, 168, 67, 0.1);
+}
+
+.product-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.add-btn {
+  background: var(--primary);
+  color: var(--dark);
+  border: none;
+  padding: 10px 24px;
+  font-weight: 700;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+}
+
+.add-btn:hover {
+  background: #ecc169;
+}
+
+/* CART SIDEBAR */
+.cart-sidebar {
+  position: fixed;
+  right: -400px;
+  top: 0;
+  width: 400px;
+  height: 100vh;
+  background: #1a0a02;
+  border-left: 1px solid rgba(212, 168, 67, 0.2);
+  padding: 80px 32px 32px;
+  overflow-y: auto;
+  z-index: 999;
+  transition: right 0.3s;
+}
+
+.cart-sidebar.open {
+  right: 0;
+}
+
+.cart-sidebar h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+  color: var(--light);
+}
+
+.cart-items {
+  margin-bottom: 200px;
+  min-height: 100px;
+}
+
+.cart-item {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(212, 168, 67, 0.1);
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-item-info {
+  flex-grow: 1;
+}
+
+.cart-item-name {
+  font-size: 0.95rem;
+  color: var(--light);
+  font-weight: 600;
+}
+
+.cart-item-size {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.cart-item-price {
+  color: var(--primary);
+  font-weight: 700;
+  text-align: right;
+}
+
+.cart-item-remove {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  margin-left: 12px;
+  font-weight: 600;
+}
+
+.cart-summary {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  right: 32px;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+  border-bottom: 1px solid rgba(212, 168, 67, 0.1);
+}
+
+.summary-line.total {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--primary);
+  font-weight: 700;
+  border-bottom: none;
+  border-top: 1px solid rgba(212, 168, 67, 0.2);
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+.checkout-btn {
+  width: 100%;
+  background: var(--primary);
+  color: var(--dark);
+  border: none;
+  padding: 16px;
+  font-weight: 700;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  margin-top: 16px;
+  font-family: 'Playfair Display', serif;
+}
+
+.checkout-btn:hover {
+  background: #ecc169;
+}
+
+.checkout-btn:disabled {
+  background: #7A6A55;
+  cursor: not-allowed;
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--muted);
+}
+
+/* FOOTER */
+footer {
+  background: #1A120E;
+  border-top: 1px solid rgba(212, 168, 67, 0.1);
+  padding: 40px 5%;
+  text-align: center;
+}
+
+footer p {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 10px 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero { grid-template-columns: 1fr; }
+  .products-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 2.2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-left">
+    <div class="logo-mark">P</div>
+    <div class="logo-text">Puresee</div>
+  </div>
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <button class="cart-btn" onclick="toggleCart()">🛒 Cart <span id="cartCount">0</span></button>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Don't trust the label.<br><span class="accent">Watch the batch.</span></h1>
+    <p class="hero-subtitle">Every pack includes camera footage of production + NABL lab report. Proof in every pack.</p>
+    <button class="btn-primary" onclick="document.getElementById('products').scrollIntoView()">Pre-Order Now</button>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="products-section">
+  <div class="section-header">
+    <div class="section-label">Limited Pre-Order</div>
+    <h2>Pure Spices</h2>
+  </div>
+
+  <div class="products-grid">
+    <div class="product-card">
+      <div class="product-hero">🌶️</div>
+      <div class="product-body">
+        <div class="product-badge">Batch PSE-0114</div>
+        <div class="product-name">Guntur Red Chili</div>
+        <div class="product-desc">Sun-dried, stone-ground. Zero fillers. Lab-tested for Sudan dye & foreign starch.</div>
+        <div class="product-footer">
+          <div class="product-price">₹199</div>
+          <button class="add-btn" onclick="addToCart('Guntur Red Chili', 199, '200g')">Add</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-hero">🟡</div>
+      <div class="product-body">
+        <div class="product-badge">Batch PSE-0109</div>
+        <div class="product-name">Erode Turmeric</div>
+        <div class="product-desc">Single-origin, high-curcumin. Checked for lead chromate & heavy metals.</div>
+        <div class="product-footer">
+          <div class="product-price">₹189</div>
+          <button class="add-btn" onclick="addToCart('Erode Turmeric', 189, '200g')">Add</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-hero">🫙</div>
+      <div class="product-body">
+        <div class="product-badge">Coming Soon</div>
+        <div class="product-name">Garam Masala Blend</div>
+        <div class="product-desc">9-spice blend. Each ingredient batch-traced & lab-verified.</div>
+        <div class="product-footer">
+          <div class="product-price">₹149</div>
+          <button class="add-btn" onclick="alert('Coming in next batch')">Notify</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>pureseespices@gmail.com</strong> | <strong>+91-9835484078</strong></p>
+  <p>Patna, Bihar, India | FSSAI Lic. [pending]</p>
+  <p>&copy; 2026 Puresee Spices. Proof in every pack.</p>
+</footer>
+
+<!-- CART SIDEBAR -->
+<div class="cart-sidebar" id="cartSidebar">
+  <h2>Your Pre-Order</h2>
+  
+  <div class="cart-items" id="cartItems">
+    <div class="empty-cart">Cart is empty</div>
+  </div>
+
+  <div class="cart-summary">
+    <div class="summary-line">
+      <span>Subtotal:</span>
+      <span id="subtotal">₹0</span>
+    </div>
+    <div class="summary-line">
+      <span>Shipping:</span>
+      <span>₹69</span>
+    </div>
+    <div class="summary-line total">
+      <span>Total:</span>
+      <span id="total">₹69</span>
+    </div>
+    <button class="checkout-btn" id="checkoutBtn" onclick="checkout()" disabled>Checkout</button>
+  </div>
+</div>
+
+<script>
+let cart = [];
+
+function addToCart(product, price, size) {
+  console.log('Adding to cart:', product, price, size);
+  
+  let existing = cart.find(item => item.product === product);
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({ product, price, size, qty: 1 });
+  }
+  
+  updateCart();
+  toggleCart(); // Open cart
+}
+
+function updateCart() {
+  const cartItemsDiv = document.getElementById('cartItems');
+  const subtotalSpan = document.getElementById('subtotal');
+  const totalSpan = document.getElementById('total');
+  const checkoutBtn = document.getElementById('checkoutBtn');
+  const cartCount = document.getElementById('cartCount');
+  
+  cartCount.textContent = cart.length;
+  
+  if (cart.length === 0) {
+    cartItemsDiv.innerHTML = '<div class="empty-cart">Cart is empty</div>';
+    subtotalSpan.textContent = '₹0';
+    totalSpan.textContent = '₹69';
+    checkoutBtn.disabled = true;
+    return;
+  }
+  
+  let html = '';
+  let subtotal = 0;
+  
+  cart.forEach((item, idx) => {
+    const itemTotal = item.price * item.qty;
+    subtotal += itemTotal;
+    
+    html += `
+      <div class="cart-item">
+        <div class="cart-item-info">
+          <div class="cart-item-name">${item.product}</div>
+          <div class="cart-item-size">${item.size} × ${item.qty} = ₹${itemTotal}</div>
+        </div>
+        <button class="cart-item-remove" onclick="removeItem(${idx})">✕</button>
+      </div>
+    `;
+  });
+  
+  cartItemsDiv.innerHTML = html;
+  
+  const total = subtotal + 69;
+  subtotalSpan.textContent = '₹' + subtotal;
+  totalSpan.textContent = '₹' + total;
+  checkoutBtn.disabled = false;
+}
+
+function removeItem(idx) {
+  cart.splice(idx, 1);
+  updateCart();
+}
+
+function toggleCart() {
+  document.getElementById('cartSidebar').classList.toggle('open');
+}
+
+function checkout() {
+  if (cart.length === 0) {
+    alert('Cart is empty');
+    return;
+  }
+  
+  const total = parseInt(document.getElementById('total').textContent.replace('₹', ''));
+  const cartSummary = cart.map(item => `${item.product} (${item.qty}x) - ₹${item.price * item.qty}`).join('\n');
+  
+  alert(`🎉 Pre-order received!\n\n${cartSummary}\n\nTotal: ₹${total}\n\nWe will send payment link via WhatsApp/Email.\n\nContact: +91-9835484078 or pureseespices@gmail.com`);
+  
+  cart = [];
+  updateCart();
+  toggleCart();
+}
+</script>
+
+</body>
+</html>
